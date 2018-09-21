@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.gradle:build-scan-plugin:1.16"
+    }
+}
+
+plugins {
+    id 'com.gradle.build-scan' version '1.16'
+    id 'java'
+}
+
+apply plugin: "com.gradle.build-scan"
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.mockito:mockito-core:2.+"
+    testCompile("org.assertj:assertj-core:3.11.1")
+}
+
+group 'ParseCSV'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+
+
+
+
+
+
+
